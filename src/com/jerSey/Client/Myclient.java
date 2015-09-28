@@ -68,14 +68,11 @@ public class Myclient {
 				e.printStackTrace();
 			  }
 		}
+ 
       
+      public void Register(String ID){
       
-      
-      
-      
-      
-      
-      
+    }
 }
 	
 	
