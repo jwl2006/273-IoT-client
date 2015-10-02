@@ -40,8 +40,6 @@ public class Myclient {
 
 	}
 	
-	//comment
-	
       public void ClientPost(String input) {
 			try {
 
@@ -70,10 +68,28 @@ public class Myclient {
 		}
  
       
-      public void Register(String ID){
-      
-    }
-}
+      public void Register(String ID)throws InterruptedException{
+    
+    	  Client client = Client.create();
+    	  
+    	  WebResource webResource = client
+				   .resource("http://localhost:8080/com.youtube.rest/api/webservice/post");
+    	  ClientResponse response = webResource.type("application/json")
+				   .post(ClientResponse.class, ID);
+    	  System.out.println("Registering.....");
+    	  Thread.sleep(5000);
+    		if (response.getStatus() != 201) {
+				throw new RuntimeException("Failed : HTTP error code : "
+				     + response.getStatus());
+			}
+    		String output = response.getEntity(String.class);
+    		if (output.equals("2.04 Changed"))
+    			System.out.println("Registered success");
+    		else if (output.equals("4.00 Bad Request"))
+    			System.out.println("Not Registered, Contact Admin");
+      }
+          
+ }
 	
 	
 	
