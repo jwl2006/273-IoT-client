@@ -47,17 +47,17 @@ public class Myclient {
 
 				WebResource webResource = client
 				   .resource("http://localhost:8080/com.youtube.rest/api/webservice/post");
-				
+			
 
 				ClientResponse response = webResource.type("application/json")
 				   .post(ClientResponse.class, input);
-
+                 
 				if (response.getStatus() != 201) {
 					throw new RuntimeException("Failed : HTTP error code : "
 					     + response.getStatus());
 				}
-
-				System.out.println(" Here in POST() Server Side ...\n");
+                
+			
 				String output = response.getEntity(String.class);
 				System.out.println(output);
 
