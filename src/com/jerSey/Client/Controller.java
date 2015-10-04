@@ -1,7 +1,6 @@
 package com.jerSey.Client;
 //import java.util.Date;
 
-
 //import java.text.SimpleDateFormat;
 import org.codehaus.jettison.json.JSONException;
 //import org.codehaus.jettison.json.JSONObject;
@@ -9,14 +8,23 @@ import org.codehaus.jettison.json.JSONException;
 //"{\"ID\":\"Client1\",\"VALUE\":\"apple\"}"
 
 public class Controller {
-
 public static void main(String[] args) throws InterruptedException, JSONException {
-
+ String info = "{\"ID\":\"client1\", \"Lifetime\":\"86400\",\"LWM2M Version\":\"1.0\","
+ 		+ "\"Objects\":\"1-1,2-1\"}";
+		
+     Registration L1 = new Registration();	
+     L1.register(info);
+	 System.out.println("Your registered information: ");
+	
+	
+	
+/*	
 	Bootstrap M1 = new Bootstrap(); 
 	   String info=M1.boot("client1");
 	    System.out.println("Your bootstrap information: ");
 		System.out.println(info);
-	  
+*/
+
  /* 
 	
     Myclient client1 = new Myclient(); 
