@@ -1,6 +1,7 @@
 package com.jerSey.Client;
 //import java.util.Date;
 
+
 //import java.text.SimpleDateFormat;
 import org.codehaus.jettison.json.JSONException;
 //import org.codehaus.jettison.json.JSONObject;
@@ -12,9 +13,11 @@ public class Controller {
 public static void main(String[] args) throws InterruptedException, JSONException {
 
 	Bootstrap M1 = new Bootstrap(); 
-	   String ID=M1.boot();
-	   System.out.println(ID);
- /*   
+	   String info=M1.boot("client1");
+	    System.out.println("Your bootstrap information: ");
+		System.out.println(info);
+	  
+ /* 
 	
     Myclient client1 = new Myclient(); 
     String input ="post";
@@ -44,8 +47,8 @@ public static void main(String[] args) throws InterruptedException, JSONExceptio
 	    	  client1.ClientGet("client1");
 	      }
 	 
-	
-	*/ 
+	*/
+	 
    }
 }
 

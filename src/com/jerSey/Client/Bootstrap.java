@@ -1,7 +1,7 @@
 package com.jerSey.Client;
 
 import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
+//import org.codehaus.jettison.json.JSONObject;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -10,13 +10,14 @@ import com.sun.jersey.api.client.WebResource;
 public class Bootstrap {
 
 	
-public String boot() throws JSONException
+
+   public String boot(String clientName) throws JSONException
 	{
-	    System.out.println("in boot() function");
-		Client client = Client.create();
+	    
+	    Client client = Client.create();
 
 		WebResource webResource = client
-		   .resource("http://localhost:8080/com.youtube.rest/api/bootstrap/get");
+		   .resource("http://localhost:8080/com.youtube.rest/api/bootstrap/get/"+clientName);;
 
 		ClientResponse response = webResource.accept("application/json")
                    .get(ClientResponse.class);
@@ -28,12 +29,12 @@ public String boot() throws JSONException
 		}
 
 		String output = response.getEntity(String.class);
-        JSONObject obj = new JSONObject(output);
-        String id= obj.optString("ID");
-        String value = obj.optString("VALUE");
+
         
-		System.out.println(value+ " Your ID is: " + id);
-		return id;	
+       
+    
+		return output;
+		
    }
 };
 	
