@@ -12,14 +12,16 @@ public class Database {
 		try{
 		Class.forName("com.mysql.jdbc.Driver");	
 		 connection= DriverManager.getConnection(
-				 "jdbc:mysql://localhost:3306/client","root","102012"); 
+				 "jdbc:mysql://localhost:3306/client","root","root"); 
 		 Statement statement = connection.createStatement();
-		 String query = "SELECT * FROM employee";
+		 String query = "SELECT * FROM data";
 		 ResultSet result = statement.executeQuery(query);
 		 while (result.next()){
-			 System.out.println(result.getInt("ID"));
-			 System.out.println(result.getString("NAME"));
-			 System.out.println(result.getInt("SALARY")); 
+			 System.out.println(result.getString("ID"));
+			 System.out.println(result.getString("Manufacture"));
+			 System.out.println(result.getString("Product_ID"));
+			 System.out.println(result.getString("DATE")); 
+			 System.out.println(result.getString("URI")); 
 		 }
 		 connection.close();
 		}catch(SQLException e){

@@ -20,7 +20,7 @@ public static void main(String[] args) throws InterruptedException, JSONExceptio
   //   L1.update("client1");
  //    L1.deRegister("client1");
 
-	
+
 	Database db1 =new Database();
 	try{
 		db1.establishJDBC();
@@ -28,7 +28,7 @@ public static void main(String[] args) throws InterruptedException, JSONExceptio
 		e.printStackTrace();
 	}{}
 	
-/*	
+	/*
 	Bootstrap M1 = new Bootstrap(); 
 	   String info=M1.boot("client1");
 	    System.out.println("Your bootstrap information: ");
