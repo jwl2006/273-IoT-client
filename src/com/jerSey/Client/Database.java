@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database {
-	public static void establishJDBC() throws ClassNotFoundException
+	public  void establishJDBC() throws ClassNotFoundException
 	{
-		try{
 		java.sql.Connection connection = null;
+		try{
 		Class.forName("com.mysql.jdbc.Driver");	
 		 connection= DriverManager.getConnection(
-				 "jdbc:mysql://localhost:3306/employee","root","14925"); 
+				 "jdbc:mysql://localhost:3306/client","root","102012"); 
 		 Statement statement = connection.createStatement();
 		 String query = "SELECT * FROM employee";
 		 ResultSet result = statement.executeQuery(query);
