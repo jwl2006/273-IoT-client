@@ -9,7 +9,7 @@ public class Registration {
 			try {
 
 				Client client = Client.create();
-
+                System.out.println("Registering.....");
 				WebResource webResource = client
 				   .resource("http://localhost:8080/com.youtube.rest/api/registration/register");
 			
@@ -50,6 +50,7 @@ public class Registration {
 					     + response.getStatus());
 				}
              
+				System.out.println("Updating");
 			
 				String output = response.getEntity(String.class);
 				System.out.println(output);
@@ -78,9 +79,10 @@ public class Registration {
 					     + response.getStatus());
 				}
              
-			
+				System.out.println("Deleting account");
 				String output = response.getEntity(String.class);
 				System.out.println(output);
+				System.out.println("Deregister Done!");
 
 			  } catch (Exception e) {
 
