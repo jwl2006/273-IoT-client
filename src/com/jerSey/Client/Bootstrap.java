@@ -21,7 +21,7 @@ private static String defaultValue = "('client1','Haier','00/00/0000','30-34-40'
     	System.out.println("The default value is: ");
     	System.out.println(defaultValue);
     	db1.delete("client1");
-    	db1.insert(defaultValue);
+ //   	db1.insert(defaultValue);
     	System.out.println("Self boot done!");
 	}
 
@@ -49,7 +49,7 @@ private static String defaultValue = "('client1','Haier','00/00/0000','30-34-40'
 		System.out.println("QUERY"); 
 		System.out.println(query); 
 		db1.delete("client1");
-		db1.insert(query);
+	//	db1.insert(query);
 		System.out.println("Information saved in Mysql!");
 		System.out.println("Server boot done!");
 		
